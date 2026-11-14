@@ -1,0 +1,16 @@
+services:
+  user-service:
+    build:
+      context: ./services/user-service
+    image: user-service:v1
+    ports:
+      - "127.0.0.1:5001:5001"
+    restart: unless-stopped
+
+  product-service:
+    build:
+      context: ./services/product-service
+    image: product-service:v1
+    ports:
+      - "127.0.0.1:5002:5002"
+    restart: unless-stopped
